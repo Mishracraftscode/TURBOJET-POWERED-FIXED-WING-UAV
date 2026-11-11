@@ -1,0 +1,90 @@
+
+### 1. Fuselage
+
+*Create this using a **Loft** (or Form workspace) along a 1850 mm centerline, split into distinct modular bays:*
+
+* **Total Length:** `1850 mm`
+* **Maximum Width:** `240 mm` (at payload bay)
+* **Maximum Height:** `220 mm`
+* **Modular Sections (from Front to Back):**
+* **Nose Cone (0 to 300 mm):** Dome-tapered shape. Houses the upfront avionics and pitot tube.
+* **Payload Bay & Camera Gimbal (300 to 550 mm):** Flattened underbelly compartment sized at `220 mm x 130 mm x 100 mm` to comfortably fit the optical gimbal.
+* **VTOL Battery Bay (550 to 750 mm):** Directly centered on the CG. Houses the lightweight 6S/12S high-discharge flight batteries.
+* **Kerosene/Jet-A1 Fuel Tank (750 to 1100 mm):** Cylindrical space of `ø135 mm x 320 mm` centered on CG to maintain flight trim as fuel burns.
+* **Dorsal Air Intake Cowl (950 to 1250 mm):** A raised NACA duct on top of the fuselage. Minimum opening (throat area): `5000 mm²` (`~100 mm width x 50 mm height`).
+* **Engine Bay (1150 to 1550 mm):** Houses the 20 kg thrust micro-turbine. Includes a `15 mm` air-cooling gap around it.
+* **Tailcone (1550 to 1850 mm):** Sleek rear taper enclosing the jet exhaust.
+
+---
+
+### 2. Fixed Wings (Monoplane Swept-Wing)
+
+*Sketch 2D Airfoil profiles and use **Loft** or **Sweep** with guide rails:*
+
+* **Full Wingspan:** `1950 mm` (excluding winglets)
+* **Root Chord ($C_{root}$):** `360 mm` (at `X = 550 to 910 mm` along the fuselage)
+* **Tip Chord ($C_{tip}$):** `180 mm`
+* **Leading-Edge Sweep ($Λ_{LE}$):** `15°`
+* **Dihedral Angle:** `0°` (flat to maximize lift)
+* **Incidence Angle:** `+2.0°` (angled up relative to the fuselage)
+* **Airfoils:** **NACA 64A-010** (10% thickness) at Root; **NACA 64A-008** (8% thickness) at Tip.
+* **Taper Ratio ($\lambda$):** `0.5`
+* **Winglets:** Sweep up `75°`, extending `120 mm` high, `80 mm` long.
+
+---
+
+### 3. V-Tail Stabilizers (Empennage)
+
+*Angled up in a ‘V’ to clear the turbojet's hot exhaust wash:*
+
+* **V-Tail Angle:** `45°` from horizontal (forming a `90°` included angle)
+* **Span (Per side):** `320 mm`
+* **Root Chord:** `200 mm`
+* **Tip Chord:** `110 mm`
+* **Sweepback:** `25°`
+* **Airfoil:** **NACA 0009** (9% symmetric flat-plate equivalent)
+
+---
+
+### 4. 20 kg (200 N) Turbojet Engine (Single Spool Micro-Turbine)
+
+*Model as a cylindrical shell component using revolve and extrude:*
+
+* **Outer Diameter:** `ø113.5 mm` (typical for 200N-class engines)
+* **Mounting Pattern:** Integrated aluminum strap, `ø116 mm` ID.
+* **Overall Length:** `285 mm` (front starter dome to exhaust edge)
+* **Intake Outer Diameter:** `ø111 mm`
+* **Exhaust Nozzle Diameter:** `ø78 mm` (extends roughly `100 mm` past the airframe)
+
+---
+
+### 5. VTOL Rotor Assembly & Carbon Booms
+
+*Model as a symmetrical 4-point "H-Frame" pattern:*
+
+* **Booms (x2):** Cylindrical carbon fiber tubes `ø25 mm x 1200 mm` mounted under the wings.
+* **Placement:** Parallel to the fuselage centerline, `360 mm` outward on each wing.
+* **Fore/Aft Extension:** Front motors sit `420 mm` forward of the wing's leading edge; rear motors sit `420 mm` behind the trailing edge.
+
+
+* **Motors (x4):** Brushless outrunner motors `ø60 mm x 42 mm` (e.g., T-Motor class).
+* **Location:** Center of motor mounts at front/rear tips of both booms (`X = ±360 mm`, `Y = ±525 mm` relative to CG).
+
+
+* **Propellers (x4):** 2-blade carbon fiber, `18 inch` (diameter `457.2 mm`), pitch `6.5"`.
+* *Ensure a `~108 mm` minimum clearance between propeller tip and fuselage side.*
+
+---
+
+### 6. Landing Skids (Ultra-Light Weight)
+
+*A sturdy cage instead of heavy wheels to stay within the 10 kg target:*
+
+* **Cross-section:** Carbon fiber tubes `ø18 mm`
+* **Skid Width (Footprint):** `420 mm`
+* **Ground Clearance:** `240 mm` (measured from fuselage base to ground)
+* **Track Length:** `850 mm` contact with the ground, curved upward at both ends.
+
+
+ 2 Attachments
+  •  Scanned by Gmail
