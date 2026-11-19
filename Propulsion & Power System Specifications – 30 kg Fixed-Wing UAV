@@ -1,0 +1,18 @@
+Here is a consolidated summary of the propulsion, drivetrain, and battery sizing calculations for our 30 kg (66 lb) fixed-wing UAV, targeting a 60-minute endurance on a 12S electric setup:
+1. Propeller & Thrust Requirements
+   Required Thrust-to-Weight Ratio: 0.4 – 0.7 (~12 kg to 21 kg of static thrust for takeoff and climb).
+   Recommended Propeller: 24×10" Carbon Fiber (2-blade) (general range: 22"–28" diameter; step down ~2" and switch to a 3-blade prop if ground clearance is limited).
+   Operating RPM:
+      Takeoff / Full Throttle: ~5,800 – 7,000 RPM (6,500 RPM target; keeps tip speed safely below Mach 0.65).
+      Cruise (~50–65% Throttle): ~3,800 – 4,600 RPM (matched to ~22 m/s cruise speed).
+2. Electric Drivetrain Specifications (12S Setup)
+   Battery Voltage: 12S LiPo / Li-ion (44.4 V nominal / ~43.2–44.4 V under full load).
+   Motor KV Rating: 170 KV – 190 KV large-stator brushless outrunner (~5.5 kW–6.5 kW continuous rating) to achieve 6,500 loaded RPM.
+   Peak Power & Current: ~5,000 W – 5,500 W electrical input (110 A – 125 A at full throttle).
+   ESC: 130 A – 160 A HV (12S–14S rated) with active cooling and high-current connectors (AS150 or QS8).
+3. Cruise Performance & 60-Minute Battery Sizing
+   Assumed Airframe Efficiency: Lift-to-Drag ratio ($L/D$) of ~13.5 cruising at 22 m/s (~80 km/h), including ~100–120 W for avionics and payload.
+   Cruise Power & Current: ~960 W – 1,010 W (~22.5 A nominal draw on 12S).
+   Required Battery Capacity: 32,000 mAh (32 Ah) on 12S (includes ~2.5 Ah climb reserve and a 20% landing safety margin).
+      LiPo Option: Two 12S 16,000 mAh packs in parallel (~8.5–9.5 kg).
+      Li-ion Option: Custom 12S7P 21700 pack (e.g., Molicel P45B, ~31,500 mAh at ~6.2–7.0 kg, saving ~2.5 kg of airframe weight).
