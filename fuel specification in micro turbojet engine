@@ -1,0 +1,30 @@
+1. Approved & Common Fuel Types
+Most micro turbojets specify kerosene-based turbine fuels (some larger or industrial microturbines 
+also allow diesel or approved Sustainable Aviation Fuel blends, subject to manufacturer approval):
+   Jet A-1 (AVTUR / NATO F-35): The most common international aviation turbine kerosene.
+   Jet A: Common commercial aviation kerosene (slightly higher freezing point than Jet A-1).
+   JP-8 / JP-5: Military kerosene-type turbine fuels (JP-8 is closely related to Jet A-1 with military additive packages; JP-5 has a higher flash point for naval/shipboard safety).
+   Refined Kerosene / Paraffin (1-K / Lamp/Heating Kerosene): Sometimes used in hobby/experimental microjets only if clean, low-sulfur, and explicitly approved by the engine maker—avoid dirty, high-sulfur, or unrefined kerosene that causes coking, soot, or hot-section damage. 
+   Diesel / SAF Blends: Certain microturbines accept automotive/ultra-low-sulfur diesel or approved SAF/kerosene blends, though viscosity, cold flow, and coking tendencies must match the fuel pump and combustor.
+   (Note: Propane or butane is often used only as a start/ignition gas on many micro turbojets before switching to liquid kerosene, rather than as the main flight fuel.) 
+2. Lubrication / Turbine Oil Mixing (Crucial for Micro Turbojets)
+Unlike large commercial turbofans that have dedicated, pressurized oil-circulation systems with separate oil tanks, many small/model micro turbojets 
+lubricate their high-speed bearings using oil mixed directly into the fuel (unless the specific engine uses a dedicated closed/total-loss oil system):
+   Typical Fuel-to-Oil Ratio: Often around 20:1 to 40:1 (roughly 2.5% to 5% oil by volume), depending heavily on the exact engine model and manufacturer manual.
+   Oil Type: Synthetic turbine oil (e.g., Mobil Jet Oil II or AeroShell Turbine Oil 500/560, or manufacturer-specified turbine oil)—not standard 2-stroke piston oil or car motor oil unless explicitly approved, because bearings spin at extreme speeds and run hot.
+   Always check the engine manual: Running too little oil risks rapid bearing failure; running too much oil can alter fuel flow/combustion or leave carbon/varnish deposits.
+3. Key Fuel Properties & Specification Benchmarks (Kerosene Turbine Fuel)
+For aviation kerosene specs such as ASTM D1655 (Jet A / Jet A-1) and DEF STAN 91-91 (Jet A-1), typical engineering values are:
+    Property,Typical Specification / Value,Why It Matters in a Micro Turbojet
+Net Heat of Combustion (LHV / Specific Energy),~42.8 – 43.2+ MJ/kg (varies slightly by blend/SAF),Directly drives thrust per unit mass of fuel burned and specific fuel consumption (SFC).
+Density (at 15 °C),~775 – 840 kg/m³ (Jet A / Jet A-1),"Affects volumetric fuel flow vs. mass flow, fuel pump calibration, and range/weight calculations."
+Flash Point,≥ 38 °C (Jet A / Jet A-1; lower for wide-cut fuels like Jet B),"Indicates fire/vapor hazard during handling, fueling, and ground operations."
+Freezing / Crystallization Point,≤ −40 °C (Jet A) / ≤ −47 °C (Jet A-1),Prevents wax crystals from clogging fuel lines and filters at altitude or in cold weather.
+Kinematic Viscosity,"Low enough for fine atomization (e.g., ≤ 8.0 mm²/s at −20 °C for Jet A-1)",Micro combustors rely on fine fuel spray/vaporization; overly viscous fuel atomizes poorly and raises EGT.
+Thermal Stability (JFTOT),"Pass at standard test temp (e.g., 260 °C control temp for Jet A-1)",Fuel in tiny passages/injectors gets heated before burning—poor thermal stability forms coke deposits.
+Lubricity,"Controlled / additive-supported where needed (e.g., BOCLE wear scar limit in spec)","Protects high-precision fuel pumps, metering valves, and bearings from wear."
+"Cleanliness, Water & Sulfur",Free of undissolved water & particulates; low sulfur/acidity,"Micro fuel injectors, pumps, and turbine nozzles have tiny clearances—dirt or water causes flameouts or damage."
+4. Practical Operating & Safety Notes
+   Strict Filtration: Micro turbojets use fine fuel filters (often ~5–15 microns) on both ground refueling lines and onboard lines to protect the fuel pump and injectors.
+   No Gasoline/Mogas: Standard automotive gasoline has a very low flash point, high vapor pressure, and different combustion/safety characteristics—do not substitute gasoline in a kerosene micro turbojet unless an engine is specifically certified for it.
+   Check Your Specific Engine Spec Sheet: Because micro turbojets range from hobby/UAV propulsion to micro-turbines for research/power, always verify exact fuel grades, oil ratios, start gas requirements, and EGT limits in your engine's manual.
