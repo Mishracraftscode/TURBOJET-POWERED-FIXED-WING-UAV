@@ -1,0 +1,45 @@
+In a 30 kg fixed-wing turbojet-powered UAV, thrust augmentation is used to bridge the gap between high-speed cruise efficiency and high-thrust transient demands—most notably short-field takeoff, steep climb, high-G maneuvering, or dash speeds.
+At a 30 kg maximum takeoff weight (MTOW), the aircraft typically relies on a micro-turbojet producing roughly 100 N to 250 N (10–25 kgf) of dry static thrust (giving a thrust-to-weight ratio around $0.35$ to $0.85$). Because micro-turbojets
+operate at very high rotational speeds (80,000–130,000+ RPM) with strict weight and volume budgets, scaling up conventional fighter-jet augmentation requires major
+miniaturization trade-offs.
+Viable Thrust Augmentation Methods at the 30 kg Scale
+MethodMechanism in a 30 kg UAVTypical Thrust GainPracticality & Trade-OffsSolid / Hybrid RATO Boosters (Rocket-Assisted Takeoff)Strap-on expendable or reloadable solid rocket motors fire for 1–3 seconds at launch.+100% to +300% (brief impulse)Most practical for launch. Zero penalty to the turbojet core; adds launch rail independence without enlarging the engine.Ejector / Thrust Augmentor ShroudHigh-velocity core exhaust enters a tuned shroud/diffuser duct, entraining ambient air to increase total mass flow ($\dot{m}$).+15% to +35% (static/low speed)Passive & mechanically simple (no moving parts or extra fuel), but adds fuselage volume/drag and loses effectiveness at high cruise speeds.Miniaturized Afterburner (Reheat)Secondary fuel ring and V-gutter flameholder inject and burn fuel downstream of the turbine.+25% to +50%High complexity at micro-scale. Short residence time makes flame stabilization hard; requires a variable-area nozzle and pushes fuel burn up 2–3×.Water / Water–Methanol InjectionFine mist sprayed into the compressor inlet cools intake air (raising density) and adds working fluid mass.+10% to +20%Effective in hot/high-altitude takeoffs, but carrying dedicated water tankage eats directly into the tight 30 kg payload/fuel fraction.
+Core Engineering Challenges at the 30 kg Scale
+  Tight Mass & Fuel Fraction:
+A 30 kg UAV typically allocates 5–8 kg to fuel and 4–8 kg to payload. An afterburner's specific fuel consumption (SFC) can jump from ~1.1–1.4 kg/kgf·hr (dry) to over 2.5–3.5 kg/kgf·hr (wet), draining onboard fuel in seconds if used beyond brief bursts.
+  Micro-Scale Aerothermodynamics:
+Micro-turbojets use single-stage centrifugal compressors and axial turbines with low pressure ratios ($3:1$ to $4.5:1$). Because exhaust temperatures are already high (~650–750 °C) and tailpipe lengths are short, achieving complete secondary combustion in an afterburner without overheating the airframe or causing screech/flameout is difficult.
+  Nozzle Matching:
+Adding heat (afterburning) or mass (injection) increases volumetric flow at the tailpipe. Without a variable-area exhaust nozzle (which adds servo weight and linkage complexity), backpressure rises and can push the centrifugal compressor into surge.
+Typical Design Selection by Mission Phase
+  Short/Zero-Length Launch (Catapult/Rail/Trolley): RATO boosters or a retractable/fixed ejector shroud are favored because they provide maximum static/low-speed thrust without complicating engine control.
+  High-Speed Dash / Target Drone Profile: A compact afterburner with a two-position (open/closed) actuated nozzle is used when sustained supersonic or high-subsonic dash thrust is required for 15–60 seconds.
+  Hot-and-High Operations: Inlet water-methanol misting recovers lost air density during climb-out without requiring structural tailpipe changes.
+Sizing a passive exhaust ejector thrust augmentor for a micro-turbojet involves matching the high-speed primary exhaust jet to a surrounding shroud (mixing duct and optional diffuser) so that viscous shear entrains ambient air and increases total momentum flux—without raising backpressure enough to push the micro-turbojet into stall or surge.
+Because a passive ejector has no moving vanes or extra fuel injection, thrust augmentation is highest at static and low airspeeds (such as launch or climb) and drops off as flight speed rises toward the jet exit velocity.
+1. Define Target Augmentation & Operating Point
+Start with the baseline micro-turbojet parameters at the critical flight condition (usually static or low-speed takeoff):
+  Primary mass flow rate ($\dot{m}_p$) and exhaust velocity ($v_p$) (or static thrust $F_p \approx \dot{m}_p v_p$, since micro-turbojets typically operate near choked or slightly under/over-expanded nozzles).
+  Entrainment ratio ($\omega = \dot{m}_s / \dot{m}_p$): The ratio of entrained secondary ambient air ($\dot{m}_s$) to primary engine exhaust ($\dot{m}_p$).
+Using a simplified momentum-conservation model for an ideal constant-area mixer (neglecting wall friction and pressure rise), the augmented thrust $F_a$ relative to baseline thrust $F_p$ depends on the entrainment ratio $\omega$:
+$$\frac{F_a}{F_p} \approx 1 + \omega$$
+In real hardware—accounting for incomplete mixing, friction losses, and non-uniform exit profiles—effective thrust augmentation ratios ($\phi = F_a / F_p$) for compact passive ejectors typically fall around 1.10 to 1.35 (a 10%–35% boost) at low speed.
+2. Size the Primary Nozzle-to-Mixer Area Ratio ($AR$)
+The area ratio is the ratio of the mixing duct cross-sectional area ($A_m$) to the primary nozzle exit area ($A_p$):$$AR = \frac{A_m}{A_p}$$
+Too small ($AR$ too low): Limits how much secondary air can enter, capping thrust gain and potentially choking the secondary flow.
+Too large ($AR$ too high): The primary jet cannot fill or energize the full duct cross-section over a reasonable length, causing flow separation, reverse flow (backflow) along the walls, and poor mixing efficiency.
+Micro-turbojet starting point: For compact UAV installations, effective area ratios commonly sit around $AR \approx 2.0$ to $4.5$, depending on available fuselage/tailcone diameter and desired mixing length.
+3. Size the Mixing Duct Length ($L_m$) and Inlet Lip
+The primary jet needs enough axial distance to shear against the slow secondary stream and transfer momentum before exiting:
+Mixing length ($L_m$): Often scaled relative to the mixing duct hydraulic diameter ($D_m$) or primary nozzle diameter ($D_p$). Typical mixing sections range from $3\,D_m$ to $7\,D_m$ (or roughly $6\,D_p$ to $12\,D_p$), often shortened in compact UAVs using lobed nozzles, chevrons, or multi-nozzle arrays to accelerate shear-layer mixing.
+Secondary air intake / lip: Smoothly rounded or bellmouth-style secondary inlets minimize inlet separation losses when drawing ambient air into the annulus around the primary nozzle.
+Thermal & acoustic margins: Micro-turbojet exhaust gases are hot (~600–750 °C at the turbine/tailpipe) and acoustically intense. Leave an annular cooling/standoff gap or thermal barrier so hot core gas doesn't overheat adjacent airframe structure or avionics bays.
+4. Optional Diffuser Sizing for Pressure Recovery
+Adding a divergent diffuser at the exit of the mixing section can convert dynamic pressure into static pressure rise, helping draw more secondary air through the inlet and increasing thrust—provided the flow stays attached:
+Half-angle limit: Keep total divergence half-angles modest (typically 5° to 8° total/included angle or 3°–5° half-angle on each wall) to prevent boundary-layer separation.
+Area expansion ratio: Moderate expansion (e.g., exit-to-mixer area ratio of 1.1 to 1.4) is usually safer in a tight UAV tail than an aggressive diffuser that stalls and creates drag.
+5. Verify Engine Backpressure & Stall Margin
+The single biggest pitfall when adding an ejector shroud to a micro-turbojet is unintended backpressure at the primary nozzle:
+Check static pressure at the primary exit: If the mixing duct restricts flow or creates a choking bottleneck, static pressure downstream of the turbine rises.
+Watch compressor operating line: Micro-turbojets (especially single-stage centrifugal units) have narrower surge margins than large commercial turbofans. Elevated backpressure shifts the operating point toward compressor surge, audible as pops/chuffs, EGT spikes, or thrust loss.
+Test on a thrust stand: Measure baseline dry thrust ($F_p$) with the shroud off, then measure thrust with the shroud installed across throttle settings—verifying smooth spool-up, stable exhaust gas temperature (EGT), and net positive thrust gain rather than net drag/loss.
